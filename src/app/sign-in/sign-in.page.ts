@@ -13,10 +13,10 @@ import { ToastController } from '@ionic/angular';
 })
 export class SignInPage implements OnInit {
 
-    user =
+  user =
     {
-      email:"",
-      password:""
+      email: "",
+      password: ""
     }
 
   constructor(
@@ -54,7 +54,7 @@ export class SignInPage implements OnInit {
             var t = String(type);
             console.log("User type:"+t);
             //self.itemservice.setUsertype(t);
-            self.router.navigate(["/"]);
+            //self.router.navigate(["/"]);
             //self.itemservice.load_my_orders();
             //self.itemservice.load_my_carts();
           });
@@ -62,6 +62,8 @@ export class SignInPage implements OnInit {
         .catch(function(error) {
           console.log("Error getting documents:",error);
         });
+
+      self.router.navigate(["/tabs/"]);
   	})
   	.catch(error => {
       console.log(error);
